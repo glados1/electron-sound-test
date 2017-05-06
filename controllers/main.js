@@ -1,4 +1,4 @@
-
+'use strict';
 var electron = require('electron');
 var app = electron.app;
 var BrowserWindow = electron.BrowserWindow;
@@ -37,7 +37,6 @@ function createWindow() {
 	mainWindow.loadURL(URL);
 
 	mainWindow.webContents.openDevTools();
-
 
 	mainWindow.on('closed', () => {
 		mainWindow = null;
@@ -88,7 +87,7 @@ function ipcListener() {
 
 		settingsWindow.loadURL(URL);
 
-		//settingsWindow.webContents.openDevTools();
+		settingsWindow.webContents.openDevTools();
 
 		settingsWindow.on('closed', () => {
 			settingsWindow = null;
